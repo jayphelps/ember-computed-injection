@@ -51,7 +51,7 @@ export default ExampleController;
 ```
 Since both ember-cli and Ember App Kit use a customer Resolver, all you need to do is place the item you are injecting inside a pluralized directory name of the same type. e.g. `app/services/geolocation.js`
 
-If you want the injection to be a singleton, [set up an initializer](http://iamstef.net/ember-app-kit/guides/naming-conventions.html#initializers)
+See the [ES5 usage for more info](#es5-traditional)
 
 ## Any gotchas?
 
