@@ -1,0 +1,8 @@
+{
+  "name": "ember-computed-injection",
+  "version": "0.1.0",
+  "main": "ember-computed-injection.js",
+  "dependencies": {
+    "ember": ">= 1.0.0"
+  }
+}

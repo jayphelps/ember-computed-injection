@@ -1,5 +1,5 @@
 /**
- * ember-computed-injection v0.0.1
+ * ember-computed-injection v0.1.0
  * (c) 2014 Jay Phelps
  * MIT Licensed
  * https://github.com/jayphelps/ember-computed-injection
