@@ -3,8 +3,7 @@ ember-computed-injection
 
 A tiny script for injecting any dependency into an Ember class definition.
 
-### Usage
-
+## Usage
 
 #### ES5 (traditional)
 ```javascript
@@ -25,7 +24,7 @@ Ember.onLoad('Ember.Application', function (Application) {
   });
 });
 ```
-#### ES6 (ember-cli/Ember App Kit)
+#### ES7 Modules (ember-cli/Ember App Kit)
 ```javascript
 var injection = Ember.computed.injection;
 
@@ -36,3 +35,6 @@ var MyController = Ember.Controller.extend({
 export default MyController;
 ```
 Since both ember-cli and Ember App Kit use a customer Resolver, all you need to do is place the item you are injecting inside a pluralized directory name of the same type. e.g. `app/services/geolocation.js`
+
+## License
+MIT Licensed
