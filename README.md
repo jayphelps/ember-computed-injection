@@ -7,11 +7,18 @@ A *really* tiny script for injecting any dependency into an Ember class definiti
 
 #### ES5 (traditional)
 ```javascript
-App.MyController = Ember.Controller.extend({
+App.ExampleController = Ember.Controller.extend({
   geolocation: Ember.computed.injection('service:geolocation')
 });
 ```
-If the item you are injecting doesn't already exist in the container, you'll need to register it prior:
+This assumes you have some existing class defined like this:
+```javascript
+App.GeolocationService = Ember.Object.extend();
+```
+Notice that Ember will resolve it `service:geolocation => App.GeolocationService` just like it would `controller:example => App.ExampleController`.
+
+Alternatively, you can register things using an initializer, which is useful if the injection should always be a singleton:
+
 ```javascript
 Ember.onLoad('Ember.Application', function (Application) {
   Application.initializer({
@@ -19,7 +26,7 @@ Ember.onLoad('Ember.Application', function (Application) {
 
     initialize: function(container, application) {
       // App.GeolocationService is some hypothetical class you defined prior 
-      application.register('service:geolocation', App.GeolocationService);
+      application.register('service:geolocation', App.GeolocationService, { singleton: false });
     }
   });
 });
@@ -28,11 +35,11 @@ Ember.onLoad('Ember.Application', function (Application) {
 ```javascript
 var injection = Ember.computed.injection;
 
-var MyController = Ember.Controller.extend({
+var ExampleController = Ember.Controller.extend({
   geolocation: injection('service:geolocation')
 });
 
-export default MyController;
+export default ExampleController;
 ```
 Since both ember-cli and Ember App Kit use a customer Resolver, all you need to do is place the item you are injecting inside a pluralized directory name of the same type. e.g. `app/services/geolocation.js`
 
