@@ -26,7 +26,7 @@ Ember.onLoad('Ember.Application', function (Application) {
 
     initialize: function(container, application) {
       // App.GeolocationService is some hypothetical class you defined prior 
-      application.register('service:geolocation', App.GeolocationService, { singleton: false });
+      application.register('service:geolocation', App.GeolocationService, { singleton: true });
     }
   });
 });
