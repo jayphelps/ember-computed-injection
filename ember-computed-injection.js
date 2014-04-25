@@ -15,7 +15,7 @@
       var container = get(this, 'container');
       Ember.assert('Ember.computed.injection requires instances to have an instance of Ember.Container at this.container but none was found. You\'re probably manually creating objects? Learn about containers: https://github.com/emberjs/website/pull/1293', container instanceof Container);
       return container.lookup(fullName, options);
-    }).readOnly()
+    }).readOnly();
   };
 
 })(Ember);
