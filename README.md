@@ -38,5 +38,11 @@ Since both ember-cli and Ember App Kit use a customer Resolver, all you need to 
 
 If you want the injection to be a singleton, [set up an initializer](http://iamstef.net/ember-app-kit/guides/naming-conventions.html#initializers)
 
+## Any gotchas?
+
+Only for users who stray outside the Ember-idiomatic beaten path and manually create class instances.
+
+Instances must have an `Ember.Container` assigned at `this.container`. Ember will handle this for you when resolving routes, controllers, views, etc but if you manually `.create()` a class, it does not come with a container, so it won't be able to resolve your dependency. You can either pass an existing container along or use the container itself to create your class instances.[Learn more](https://github.com/emberjs/website/pull/1293)
+
 ## License
 MIT Licensed
