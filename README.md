@@ -15,18 +15,26 @@ This assumes you have some existing class defined like this:
 ```javascript
 App.GeolocationService = Ember.Object.extend();
 ```
-Notice that Ember will resolve it `service:geolocation => App.GeolocationService` just like it would `controller:example => App.ExampleController`.
+Notice that Ember will resolve it `service:geolocation => App.GeolocationService` just like it would `controller:example => App.ExampleController`. 
 
-Alternatively, you can register things using an initializer, which is useful if the injection should always be a singleton:
+**By default, injections will return a singleton**. You can provide an options hash to change this behavior:
+
+```javascript
+App.ExampleController = Ember.Controller.extend({
+  geolocation: Ember.computed.injection('service:geolocation', { singleton: false })
+});
+
+```
+Alternatively, you can globally change this behavior using an initializer:
 
 ```javascript
 Ember.onLoad('Ember.Application', function (Application) {
   Application.initializer({
     name: 'services',
 
-    initialize: function(container, application) {
+    initialize: function (container, application) {
       // App.GeolocationService is some hypothetical class you defined prior 
-      application.register('service:geolocation', App.GeolocationService, { singleton: true });
+      application.register('service:geolocation', App.GeolocationService, { singleton: false });
     }
   });
 });
