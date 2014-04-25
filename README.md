@@ -1,7 +1,7 @@
 ember-computed-injection
 ========================
 
-A computed property for injecting any dependency into an Ember class definition. Sort of like `needs` for everything else. Based off [on-going discussion](http://discuss.emberjs.com/t/services-a-rumination-on-introducing-a-new-role-into-the-ember-programming-model/4947/46?u=jayphelps) about a possible Service convention, but not dependent on it what-so-ever. You can inject any object type you want!
+A computed property for injecting any dependency into an Ember class definition. Sort of like `needs` for everything else. Based off [on-going discussion](http://discuss.emberjs.com/t/services-a-rumination-on-introducing-a-new-role-into-the-ember-programming-model/4947/46?u=jayphelps) about a possible Service convention, but not dependent on it what-so-ever. You can inject any object type you want! In fact, you can even use `Ember.computed.injection` as a replacement for `needs` all together.
 
 ## Usage
 
