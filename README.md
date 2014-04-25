@@ -1,7 +1,7 @@
 ember-computed-injection
 ========================
 
-A tiny script for injecting any dependency into an Ember class definition.
+A *really* tiny script for injecting any dependency into an Ember class definition.
 
 ## Usage
 
