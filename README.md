@@ -24,7 +24,7 @@ Ember.onLoad('Ember.Application', function (Application) {
   });
 });
 ```
-#### ES7 Modules (ember-cli/Ember App Kit)
+#### ES6 Modules (ember-cli/Ember App Kit)
 ```javascript
 var injection = Ember.computed.injection;
 
